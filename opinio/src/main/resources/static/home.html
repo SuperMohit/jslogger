@@ -1,0 +1,43 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+</head>
+<body>
+<header class="sticky">
+        <nav class="navbar navbar-default">
+            <div class="container">
+                    <a class="navbar-brand ember-view page-active" href="/" id="ember384"><img alt="Opinio" src="opinio.png"></a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <div class="clearRight"></div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class=""><a class="ember-view" href="#" id="ember400">Delivery</a></li>
+                        <li class=""><a class="ember-view" href="#" id="ember409">POS</a></li>
+                        <li class=""><a class="ember-view" href="#" id="ember418">Careers</a></li>
+                        <li class=""><a class="ember-view" href="#" id="ember427">Contact Us</a></li>
+                        <li class="visible-xs"><a class="ember-view" href="#" id="ember436">FAQ's</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container -->
+        </nav>
+    </header>
+
+<body ng-app="opinioApp">
+    <div ng-controller="OpinioController" class="container">
+<button type="button" class="btn btn-default" ng-click="throwErrors(0, $event)">EvalError</button>
+<button type="button" class="btn btn-primary" ng-click="throwErrors(1, $event)">InternalError</button>
+<button type="button" class="btn btn-success" ng-click="throwErrors(2, $event)">RangeError</button>
+<button type="button" class="btn btn-info" ng-click="throwErrors(3, $event)">ReferenceError</button>
+<button type="button" class="btn btn-warning" ng-click="throwErrors(4, $event)">SyntaxError</button>
+<button type="button" class="btn btn-danger" ng-click="throwErrors(5, $event)">TypeError</button>
+<button type="button" class="btn btn-link" ng-click="throwErrors(6, $event)">URIError</button>
+   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controller/controller.js"></script>
+<script src="js/service/service.js"></script>
+<script src="js/config/config.js"></script>
+
+</body>
+</html>
