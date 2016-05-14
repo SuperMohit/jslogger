@@ -4,7 +4,7 @@ opinioApp.controller('OpinioController', ['$scope', 'OpinioService', function($s
         
 	      
           var self = $scope ;
-          
+          var say = "sayer sooth";
           self.throwErrors = function(errorId){
         	
            if(errorId==0) throw new EvalError('Hello', 'someFile.js', 10); 

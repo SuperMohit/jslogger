@@ -23,7 +23,7 @@
     </header>
 
 <body ng-app="opinioApp">
-    <div ng-controller="OpinioController" class="container">
+ <div ng-controller="OpinioController" class="container" id="opCon">
 <button type="button" class="btn btn-default" ng-click="throwErrors(0, $event)">EvalError</button>
 <button type="button" class="btn btn-primary" ng-click="throwErrors(1, $event)">InternalError</button>
 <button type="button" class="btn btn-success" ng-click="throwErrors(2, $event)">RangeError</button>

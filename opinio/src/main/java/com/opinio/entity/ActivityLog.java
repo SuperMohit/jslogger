@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
 @Table(name="activitylog")
 public class ActivityLog {
@@ -13,12 +14,13 @@ public class ActivityLog {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-    private String opinion;
+	private String opinion;
 	private String jevent;
 	private String comment;
 	private String os;
 	private String browser;
 	
+	   
 	public String getOpinion() {
 		return opinion;
 	}
@@ -63,13 +65,8 @@ public class ActivityLog {
 		this.id = id;
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	
 }
