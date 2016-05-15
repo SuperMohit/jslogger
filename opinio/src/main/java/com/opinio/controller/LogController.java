@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.opinio.entity.Activities;
+import com.opinio.entity.Errors;
+import com.opinio.entity.JSError;
 import com.opinio.service.LogServiceImpl;
 
 @RestController
@@ -16,18 +18,35 @@ public class LogController {
 	
 	@Autowired LogServiceImpl logService;
 	
-    @RequestMapping("/log")
-    public ResponseEntity<?> log(@RequestBody final Activities activities) {
-    	   logService.logActitvity(activities);    	
+    @RequestMapping("/logActivity")
+    public ResponseEntity<?> logActivity(@RequestBody final Activities activities) {
+    	   logService.logActivity(activities);    	
            return new ResponseEntity<>(HttpStatus.OK);
     }
-    @RequestMapping(value="/fetch", produces = MediaType.APPLICATION_JSON_VALUE)
+    
+    @RequestMapping("/logError")
+    public ResponseEntity<?> logError(@RequestBody final JSError jsError) {
+    	   logService.logError(jsError);   	
+           return new ResponseEntity<>(HttpStatus.OK);
+    }
+    
+    @RequestMapping(value="/fetchActivity", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Activities> getLogs(){   	
     	Activities activities = logService.getLogs();
     	if(activities.getActivityLogs() != null && activities.getActivityLogs().size() > 0)
     		return new ResponseEntity<Activities>(activities,HttpStatus.OK);    	
     	else 
     		return new ResponseEntity<Activities>(HttpStatus.NO_CONTENT);
+    		
+    }
+    
+    @RequestMapping(value="/fetchError", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Errors> getErrors(){   	
+    	Errors errors = logService.getErrors();
+    	if(errors.getErrors() != null && errors.getErrors().size() > 0)
+    		return new ResponseEntity<Errors>(errors,HttpStatus.OK);    	
+    	else 
+    		return new ResponseEntity<Errors>(HttpStatus.NO_CONTENT);
     		
     }
 }
